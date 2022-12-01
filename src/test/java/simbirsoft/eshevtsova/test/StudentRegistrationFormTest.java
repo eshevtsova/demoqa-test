@@ -56,23 +56,5 @@ public class StudentRegistrationFormTest {
         $(byXpath("//td[text()='Address']")).parent().shouldHave(text("Kamishinskaya, 56"));
         $(byXpath("//td[text()='State and City']")).parent().shouldHave(text("Uttar Pradesh Agra"));
 
-
-
-
-
-
-
-
-
-
-  //      $x("//td[text()='Student Name']").parent().shouldHave(text("Alex Ivanov"));
-
-
-
-
-
-
-
-
     }
 }
