@@ -1,4 +1,4 @@
-package simbirsoft.eshevtsova.test;
+package simbirsoft.eshevtsova.tests;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -25,16 +25,14 @@ public class StudentRegistrationFormTest {
         $("#firstName").setValue("Alex");
         $("#lastName").setValue("Ivanov");
         $("#userEmail").setValue("alex.ivanov@qwe.test");
-        $(byXpath("//label[text()='Male']")).click();
+        $("[name=gender][value=Male]").parent().click();
         $("#userNumber").setValue("9874521478");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").selectOption("1987");
         $(".react-datepicker__month-select").selectOption("September");
         $(".react-datepicker__day--014").click();
         $("#subjectsInput").setValue("English").pressEnter();
-        $(byXpath("//label[text()='Sports']")).click();
-        $(byXpath("//label[text()='Reading']")).click();
-        $(byXpath("//label[text()='Music']")).click();
+        $("#hobbiesWrapper").$(byText("Music")).click();
         $("#uploadPicture").uploadFromClasspath("images/testfile.png");
         $("#currentAddress").setValue("Kamishinskaya, 56");
         $("#submit").scrollIntoView(true);
@@ -45,16 +43,16 @@ public class StudentRegistrationFormTest {
         $("#submit").click();
 
         $(".modal-title").shouldHave(text("Thanks for submitting the form"));
-        $(byXpath("//td[text()='Student Name']")).parent().shouldHave(text("Alex Ivanov"));
-        $(byXpath("//td[text()='Student Email']")).parent().shouldHave(text("alex.ivanov@qwe.test"));
-        $(byXpath("//td[text()='Gender']")).parent().shouldHave(text("Male"));
-        $(byXpath("//td[text()='Mobile']")).parent().shouldHave(text("9874521478"));
-        $(byXpath("//td[text()='Date of Birth']")).parent().shouldHave(text("14 September,1987"));
-        $(byXpath("//td[text()='Subjects']")).parent().shouldHave(text("English"));
-        $(byXpath("//td[text()='Hobbies']")).parent().shouldHave(text("Sports, Reading, Music"));
-        $(byXpath("//td[text()='Picture']")).parent().shouldHave(text("testfile.png"));
-        $(byXpath("//td[text()='Address']")).parent().shouldHave(text("Kamishinskaya, 56"));
-        $(byXpath("//td[text()='State and City']")).parent().shouldHave(text("Uttar Pradesh Agra"));
+        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Alex Ivanov"));
+        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("alex.ivanov@qwe.test"));
+        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Male"));
+        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("9874521478"));
+        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("14 September,1987"));
+        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("English"));
+        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
+        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("testfile.png"));
+        $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Kamishinskaya, 56"));
+        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("Uttar Pradesh Agra"));
 
     }
 }
