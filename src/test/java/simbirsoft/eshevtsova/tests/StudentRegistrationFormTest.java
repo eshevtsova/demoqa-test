@@ -1,14 +1,12 @@
 package simbirsoft.eshevtsova.tests;
+
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
-
-
 public class StudentRegistrationFormTest {
-
     @BeforeAll
     static void beforeAll(){
 
@@ -17,7 +15,6 @@ public class StudentRegistrationFormTest {
         Configuration.browserSize = "1600x900";
         Configuration.baseUrl = "https://demoqa.com";
     }
-
     @Test
     void fillStudentRegistrationForm(){
 
@@ -41,7 +38,6 @@ public class StudentRegistrationFormTest {
         $("#city").click();
         $("#stateCity-wrapper").$(byText("Agra")).click();
         $("#submit").click();
-
         $(".modal-title").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Alex Ivanov"));
         $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("alex.ivanov@qwe.test"));
@@ -53,6 +49,5 @@ public class StudentRegistrationFormTest {
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("testfile.png"));
         $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Kamishinskaya, 56"));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("Uttar Pradesh Agra"));
-
     }
 }

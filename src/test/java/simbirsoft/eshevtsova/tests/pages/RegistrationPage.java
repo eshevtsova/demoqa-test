@@ -1,7 +1,7 @@
-package pages;
+package simbirsoft.eshevtsova.tests.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import components.CalendarComponent;
+import simbirsoft.eshevtsova.tests.components.CalendarComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
