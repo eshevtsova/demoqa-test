@@ -3,20 +3,24 @@ package simbirsoft.eshevtsova.tests;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.*;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
+
 public class StudentRegistrationFormTest {
     @BeforeAll
-    static void beforeAll(){
+    static void beforeAll() {
 
         System.setProperty("webdriver.gecko.driver", "c:\\geckodriver.exe");
-        Configuration.browser="FIREFOX";
+        Configuration.browser = "FIREFOX";
         Configuration.browserSize = "1600x900";
         Configuration.baseUrl = "https://demoqa.com";
     }
+
     @Test
-    void fillStudentRegistrationForm(){
+    void fillStudentRegistrationForm() {
 
         open("/automation-practice-form");
         $("#firstName").setValue("Alex");

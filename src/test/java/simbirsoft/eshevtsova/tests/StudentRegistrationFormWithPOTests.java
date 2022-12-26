@@ -3,6 +3,7 @@ package simbirsoft.eshevtsova.tests;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import simbirsoft.eshevtsova.tests.pages.RegistrationPage;
+
 public class StudentRegistrationFormWithPOTests extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     Faker faker = new Faker();
@@ -21,6 +22,7 @@ public class StudentRegistrationFormWithPOTests extends TestBase {
             date = "14",
             month = "September",
             year = "1987";
+
     @Test
     void positiveTest() {
 

@@ -2,8 +2,9 @@ package simbirsoft.eshevtsova.tests.components;
 
 import static com.codeborne.selenide.Selenide.$;
 import static java.lang.String.format;
+
 public class CalendarComponent {
-    public void setDate(String day, String month, String year){
+    public void setDate(String day, String month, String year) {
 
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").selectOption(year);

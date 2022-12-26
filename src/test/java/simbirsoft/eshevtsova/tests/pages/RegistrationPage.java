@@ -8,8 +8,8 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static java.lang.String.format;
-public class RegistrationPage {
 
+public class RegistrationPage {
     private static final String FORM_TITLE = "Student Registration Form";
     private static final String MODAL_TITLE = "Thanks for submitting the form";
     private final CalendarComponent calendar = new CalendarComponent();
